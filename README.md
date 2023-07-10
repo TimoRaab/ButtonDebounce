@@ -2,4 +2,10 @@
 Library for push buttons (software debounce), Work in progress
 
 A class for push buttons which is pretty debounce resistant. 
-This class is similiar to my other Button class, but as i have some fairly bad buttons I created this class. At the moment only the core functionality is done, so feel free to use it, but be aware that changes are coming soon. 
+Idea after https://hackaday.com/2015/12/10/embed-with-elliot-debounce-your-noisy-buttons-part-ii/ form Elliot Williams. 
+
+For usage you have to call the updateButton-Method regularly, I recommened a task scheduler. Examples will follow soon. 
+
+Check for button presses with isPressed and isLongPressed. The return value will give you if the button is pressed, the parameter only chooses if you want to execute the corresponding function for the button. 
+
+
