@@ -92,7 +92,7 @@ void ButtonDebounce::updateButton() {
 //_____________________________________________________________________________
 bool ButtonDebounce::isPressed(bool execute) {  
     if (~_isPressedTemp) {
-        if ((_buttonHistory & MASK) == COMPARATOR){ 
+        if ((_buttonHistory & MASK) == COMPARATOR){
             _buttonHistory = HISTORYINIT;
             _isPressedTemp = true;
             _pressTimeTemp = millis();
