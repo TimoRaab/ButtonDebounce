@@ -34,6 +34,9 @@ ButtonDebounce::ButtonDebounce(unsigned char pin,
 ButtonDebounce::ButtonDebounce(unsigned char pin, bool pullUp, bool executeAtRelease) : 
     ButtonDebounce(pin, pullUp, executeAtRelease, nullFunction){}
 
+ButtonDebounce::ButtonDebounce(unsigned char pin, bool pullUp) :
+    ButtonDebounce(pin, pullUp, false, nullFunction){}
+
 ButtonDebounce::ButtonDebounce(unsigned char pin) : 
     ButtonDebounce(pin, true, false, nullFunction){}
 //_____________________________________________________________________________

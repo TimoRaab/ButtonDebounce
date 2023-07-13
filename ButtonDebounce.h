@@ -43,6 +43,7 @@ class ButtonDebounce {
     public:
 		// constructor
         ButtonDebounce(unsigned char pin);
+        ButtonDebounce(unsigned char pin, bool pullUp);
         ButtonDebounce(unsigned char pin, bool pullUp, bool executeAtRelease);
         ButtonDebounce(unsigned char pin, bool pullUp, bool executeAtRelease, void (*bFunction)()) ;
 
