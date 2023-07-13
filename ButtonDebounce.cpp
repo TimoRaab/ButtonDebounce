@@ -90,6 +90,10 @@ void ButtonDebounce::updateButton() {
 //_____________________________________________________________________________
 //_EVALUATION__________________________________________________________________
 //_____________________________________________________________________________
+bool ButtonDebounce::isPressed() {
+    return isPressed(false);
+}
+
 bool ButtonDebounce::isPressed(bool execute) {  
     if (~_isPressedTemp) {
         if ((_buttonHistory & MASK) == COMPARATOR){
@@ -103,6 +107,10 @@ bool ButtonDebounce::isPressed(bool execute) {
         }
     }
     return false;
+}
+
+bool ButtonDebounce::isLongPressed() {
+    return isLongPressed(false);
 }
 
 bool ButtonDebounce::isLongPressed(bool execute) {

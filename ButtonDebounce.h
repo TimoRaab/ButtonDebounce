@@ -54,7 +54,9 @@ class ButtonDebounce {
 		
         // check for button presses
         // returns if a button is pressed!
+        bool isPressed();
         bool isPressed(bool execute);
+        bool isLongPressed();
         bool isLongPressed(bool execute);
 
         void updateButton();

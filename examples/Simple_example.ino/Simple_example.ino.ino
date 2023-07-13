@@ -16,7 +16,7 @@ void setup() {
   Serial.println("Startup");
   counter = 1;
   counterLong = 1;
-  p1.setLongPressDuration(3000);
+  p1.setLongPressDuration(1000);
   p1.setLongPressFunction(*longButtonPress);
 }
 
@@ -30,6 +30,10 @@ void loop() {
   //To get the information if a button is pressed, use the return value
   if (p2.isPressed(false)) {
     longButtonPress();
+  }
+
+  if (p2.isLongPressed()) {
+    printButtonPress();
   }
 
   delay(10);
