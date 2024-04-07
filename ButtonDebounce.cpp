@@ -1,5 +1,4 @@
 #include "ButtonDebounce.h"
-#include <Arduino.h>
 
 #define MASK        0b11000111
 #define COMPARATOR  0b00000111
@@ -22,7 +21,7 @@ ButtonDebounce::ButtonDebounce(unsigned char pin,
         _pressTimeTemp = 0;
         _isPressedTemp = false;
         _longPressDuration = 1000;
-        _bFuncLong = *nullFunction;
+        _bFuncLong = nullptr;
 
         if (_pullUp) {
             pinMode(_pin, INPUT_PULLUP);
@@ -30,15 +29,6 @@ ButtonDebounce::ButtonDebounce(unsigned char pin,
             pinMode(_pin, INPUT);
         }
 }
-
-ButtonDebounce::ButtonDebounce(unsigned char pin, bool pullUp, bool executeAtRelease) : 
-    ButtonDebounce(pin, pullUp, executeAtRelease, nullFunction){}
-
-ButtonDebounce::ButtonDebounce(unsigned char pin, bool pullUp) :
-    ButtonDebounce(pin, pullUp, false, nullFunction){}
-
-ButtonDebounce::ButtonDebounce(unsigned char pin) : 
-    ButtonDebounce(pin, true, false, nullFunction){}
 //_____________________________________________________________________________
 
 
@@ -51,6 +41,10 @@ bool ButtonDebounce::setPullUp(bool pullUp) {
     return true;
 }
 
+bool ButtonDebounce::setExecuteAtRelease(bool executeAtRelease){
+    _executeAtRelease = executeAtRelease;
+    return true;
+}
 
 bool ButtonDebounce::setFunction(void (*bFunction)()) {
     _bFunc = bFunction;
@@ -93,7 +87,11 @@ void ButtonDebounce::updateButton() {
 //_____________________________________________________________________________
 //_EVALUATION__________________________________________________________________
 //_____________________________________________________________________________
+<<<<<<< Updated upstream
 bool ButtonDebounce::isPressed(bool execute = false) {  
+=======
+bool ButtonDebounce::isPressed(bool execute) {  
+>>>>>>> Stashed changes
     if (~_isPressedTemp) {
         if ((_buttonHistory & MASK) == COMPARATOR){
             _buttonHistory = HISTORYINIT;
@@ -160,12 +158,5 @@ uint8_t ButtonDebounce::getButtonHistory() {
     return _buttonHistory;
 }
 //_____________________________________________________________________________
-
-
-
-// other methods
-void nullFunction(){
-	//Do Nothing
-};
 
 //EOF

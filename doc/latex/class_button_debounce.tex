@@ -1,0 +1,164 @@
+\doxysection{Button\+Debounce Class Reference}
+\hypertarget{class_button_debounce}{}\label{class_button_debounce}\index{ButtonDebounce@{ButtonDebounce}}
+
+
+Button Class using software debounce.  
+
+
+
+
+{\ttfamily \#include $<$Button\+Debounce.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}{Button\+Debounce}} (unsigned char pin, bool pull\+Up=true, bool execute\+At\+Release=false, void(\texorpdfstring{$\ast$}{*}b\+Function)()=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new Button Debounce object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_debounce_a8fdf0914162d518923de06107c2d7434}{is\+Pressed}} (bool execute=false)
+\begin{DoxyCompactList}\small\item\em Checks if the button is short pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}{is\+Long\+Pressed}} (bool execute=false)
+\begin{DoxyCompactList}\small\item\em Checks if the button is long pressed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}{update\+Button}} ()
+\begin{DoxyCompactList}\small\item\em Has to be called regularly! Update the current status of the button. This method reads the current status of the button and stores in history. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_button_debounce_acc17eb5d0d9ad2d584dfb78462b28697}{get\+Button\+History}} ()
+\begin{DoxyCompactList}\small\item\em For Debugging. Get current button history. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Setter Methods}\par
+{\em Setter Methods for objects of the \doxylink{class_button_debounce}{Button\+Debounce} class.
+
+All Setter Methods available. The functions always returns a true value. Pin cannot be changed after initialization. If a long press behavior is wanted, one can set the duration (Standard is 1000ms) and the function, which shall be executed automatically. }\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_button_debounce_a0e305464389251f970fe18c83b6438bf}{set\+Pull\+Up}} (bool pull\+Up)
+\item 
+bool \mbox{\hyperlink{class_button_debounce_a38831172f15fc08989d1ee56fc1f6a0b}{set\+Execute\+At\+Release}} (bool execute\+At\+Release)
+\item 
+bool \mbox{\hyperlink{class_button_debounce_a86f70ff0978676127798feb3fdbb3fb8}{set\+Function}} (void(\texorpdfstring{$\ast$}{*}b\+Function)())
+\item 
+bool \mbox{\hyperlink{class_button_debounce_a659647ff248f9aa83de838077d19b129}{set\+Long\+Press\+Duration}} (unsigned long duration)
+\item 
+bool \mbox{\hyperlink{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}{set\+Long\+Press\+Function}} (void(\texorpdfstring{$\ast$}{*}b\+Function)())
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Button Class using software debounce. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}\label{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6} 
+\index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
+\index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{ButtonDebounce()}{ButtonDebounce()}}
+{\footnotesize\ttfamily Button\+Debounce\+::\+Button\+Debounce (\begin{DoxyParamCaption}\item[{unsigned char}]{pin,  }\item[{bool}]{pull\+Up = {\ttfamily true},  }\item[{bool}]{execute\+At\+Release = {\ttfamily false},  }\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a new Button Debounce object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Physical pin at microcontroller \\
+\hline
+{\em pull\+Up} & Chooses if internal pullup resistor should be used. Does not check if pullup is present. \\
+\hline
+{\em execute\+At\+Release} & True\+: Function is executed at button release. False\+: Function is executed at button press. \\
+\hline
+{\em b\+Function} & Pointer to function which shall be executed at button press\\
+\hline
+\end{DoxyParams}
+Constructor for \doxylink{class_button_debounce}{Button\+Debounce} object. A pin is required, all other arguemnts are optional. Additionally the long\+Press\+Duration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_button_debounce_acc17eb5d0d9ad2d584dfb78462b28697}\label{class_button_debounce_acc17eb5d0d9ad2d584dfb78462b28697} 
+\index{ButtonDebounce@{ButtonDebounce}!getButtonHistory@{getButtonHistory}}
+\index{getButtonHistory@{getButtonHistory}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{getButtonHistory()}{getButtonHistory()}}
+{\footnotesize\ttfamily uint8\+\_\+t Button\+Debounce\+::get\+Button\+History (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+For Debugging. Get current button history. 
+
+\begin{DoxyReturn}{Returns}
+Current button history This method is solely meant for class debugging purposes. Can be used e.\+g. for checking if updating the button history works. 
+\end{DoxyReturn}
+\Hypertarget{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}\label{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e} 
+\index{ButtonDebounce@{ButtonDebounce}!isLongPressed@{isLongPressed}}
+\index{isLongPressed@{isLongPressed}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{isLongPressed()}{isLongPressed()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::is\+Long\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{execute = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Checks if the button is long pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em execute} & If the corresponding function should be executed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the button is long pressed 
+\end{DoxyReturn}
+\Hypertarget{class_button_debounce_a8fdf0914162d518923de06107c2d7434}\label{class_button_debounce_a8fdf0914162d518923de06107c2d7434} 
+\index{ButtonDebounce@{ButtonDebounce}!isPressed@{isPressed}}
+\index{isPressed@{isPressed}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{isPressed()}{isPressed()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::is\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{execute = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Checks if the button is short pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em execute} & If the corresponding function should be executed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the button is pressed 
+\end{DoxyReturn}
+\Hypertarget{class_button_debounce_a38831172f15fc08989d1ee56fc1f6a0b}\label{class_button_debounce_a38831172f15fc08989d1ee56fc1f6a0b} 
+\index{ButtonDebounce@{ButtonDebounce}!setExecuteAtRelease@{setExecuteAtRelease}}
+\index{setExecuteAtRelease@{setExecuteAtRelease}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{setExecuteAtRelease()}{setExecuteAtRelease()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::set\+Execute\+At\+Release (\begin{DoxyParamCaption}\item[{bool}]{execute\+At\+Release }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_debounce_a86f70ff0978676127798feb3fdbb3fb8}\label{class_button_debounce_a86f70ff0978676127798feb3fdbb3fb8} 
+\index{ButtonDebounce@{ButtonDebounce}!setFunction@{setFunction}}
+\index{setFunction@{setFunction}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{setFunction()}{setFunction()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::set\+Function (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_debounce_a659647ff248f9aa83de838077d19b129}\label{class_button_debounce_a659647ff248f9aa83de838077d19b129} 
+\index{ButtonDebounce@{ButtonDebounce}!setLongPressDuration@{setLongPressDuration}}
+\index{setLongPressDuration@{setLongPressDuration}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{setLongPressDuration()}{setLongPressDuration()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::set\+Long\+Press\+Duration (\begin{DoxyParamCaption}\item[{unsigned long}]{duration }\end{DoxyParamCaption})}
+
+Set the duration that a long press is registered \Hypertarget{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}\label{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c} 
+\index{ButtonDebounce@{ButtonDebounce}!setLongPressFunction@{setLongPressFunction}}
+\index{setLongPressFunction@{setLongPressFunction}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{setLongPressFunction()}{setLongPressFunction()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::set\+Long\+Press\+Function (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function }\end{DoxyParamCaption})}
+
+Set the function which can be automatically called when a long press is registered. \Hypertarget{class_button_debounce_a0e305464389251f970fe18c83b6438bf}\label{class_button_debounce_a0e305464389251f970fe18c83b6438bf} 
+\index{ButtonDebounce@{ButtonDebounce}!setPullUp@{setPullUp}}
+\index{setPullUp@{setPullUp}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{setPullUp()}{setPullUp()}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::set\+Pull\+Up (\begin{DoxyParamCaption}\item[{bool}]{pull\+Up }\end{DoxyParamCaption})}
+
+\Hypertarget{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}\label{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e} 
+\index{ButtonDebounce@{ButtonDebounce}!updateButton@{updateButton}}
+\index{updateButton@{updateButton}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{updateButton()}{updateButton()}}
+{\footnotesize\ttfamily void Button\+Debounce\+::update\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Has to be called regularly! Update the current status of the button. This method reads the current status of the button and stores in history. 
+
+This has to be called regularly to register button presses! If not called regularly, button presses will be missed! 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Timo/\+Documents/\+Arduino/libraries/\+Button\+Debounce/\mbox{\hyperlink{_button_debounce_8h}{Button\+Debounce.\+h}}\end{DoxyCompactItemize}
