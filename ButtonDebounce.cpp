@@ -87,7 +87,7 @@ void ButtonDebounce::updateButton() {
 //_____________________________________________________________________________
 //_EVALUATION__________________________________________________________________
 //_____________________________________________________________________________
-bool ButtonDebounce::isPressed(bool execute = false) {  
+bool ButtonDebounce::isPressed(bool execute) {  
     if (~_isPressedTemp) {
         if ((_buttonHistory & MASK) == COMPARATOR){
             _buttonHistory = HISTORYINIT;
@@ -103,7 +103,7 @@ bool ButtonDebounce::isPressed(bool execute = false) {
 }
 
 
-bool ButtonDebounce::isLongPressed(bool execute = false) {
+bool ButtonDebounce::isLongPressed(bool execute) {
     byte tempButtonHistory = (_executeAtRelease) ? ~_buttonHistory : _buttonHistory;
     if (_isPressedTemp) {
         if ((tempButtonHistory & 0b00000001) == 1) {//Still pressed
@@ -127,7 +127,7 @@ bool ButtonDebounce::isLongPressed(bool execute = false) {
     return false;
 }
 
-bool ButtonDebounce::stillPressed(bool execute = false) {
+bool ButtonDebounce::stillPressed(bool execute) {
     byte tempButtonHistory = (_executeAtRelease) ? ~_buttonHistory : _buttonHistory;
     if (!_isPressedTemp) return false;
     if ((tempButtonHistory & 0b00000001) == 1) {
@@ -139,7 +139,7 @@ bool ButtonDebounce::stillPressed(bool execute = false) {
     return false;
 }
 
-bool ButtonDebounce::anyPressed(bool execute = false) {
+bool ButtonDebounce::anyPressed(bool execute) {
     boolean temp = isPressed(execute);
     temp = temp || stillPressed(execute);
     return temp;

@@ -109,7 +109,7 @@ class ButtonDebounce {
          * @return true if the button is pressed
          * @return false if the button is not pressed
          */
-        bool stillPressed(bool execute);
+        bool stillPressed(bool execute = false);
 
         /**
          * @brief Checks if a button is newly pressed or still pressed
@@ -118,7 +118,7 @@ class ButtonDebounce {
          * @return true if the button is pressed
          * @return false if the button is not pressed 
          */
-        bool anyPressed(bool execute);
+        bool anyPressed(bool execute = false);
 
         /**
          * @brief Has to be called regularly! Update the current status of the button.
