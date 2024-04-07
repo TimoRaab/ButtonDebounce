@@ -87,11 +87,7 @@ void ButtonDebounce::updateButton() {
 //_____________________________________________________________________________
 //_EVALUATION__________________________________________________________________
 //_____________________________________________________________________________
-<<<<<<< Updated upstream
 bool ButtonDebounce::isPressed(bool execute = false) {  
-=======
-bool ButtonDebounce::isPressed(bool execute) {  
->>>>>>> Stashed changes
     if (~_isPressedTemp) {
         if ((_buttonHistory & MASK) == COMPARATOR){
             _buttonHistory = HISTORYINIT;
