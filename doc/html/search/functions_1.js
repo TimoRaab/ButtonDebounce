@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getbuttonhistory_0',['getButtonHistory',['../class_button_debounce.html#acc17eb5d0d9ad2d584dfb78462b28697',1,'ButtonDebounce']]]
+  ['buttondebounce_0',['ButtonDebounce',['../class_button_debounce.html#a9efc1c8d2e46583acf7c08f1dea1daa6',1,'ButtonDebounce']]]
 ];

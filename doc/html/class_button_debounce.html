@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">ButtonDebounce<span id="projectnumber">&#160;v 1.0</span>
+   <div id="projectname">ButtonDebounce<span id="projectnumber">&#160;1.1</span>
    </div>
   </td>
  </tr>
@@ -79,7 +79,7 @@ $(function() {
 <p>Button Class using software debounce.  
  <a href="class_button_debounce.html#details">More...</a></p>
 
-<p><code>#include &lt;ButtonDebounce.h&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="_button_debounce_8h_source.html">ButtonDebounce.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -92,6 +92,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0b92f5d1a747d84b21869d0568a166e" id="r_ac0b92f5d1a747d84b21869d0568a166e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#ac0b92f5d1a747d84b21869d0568a166e">isLongPressed</a> (bool execute=false)</td></tr>
 <tr class="memdesc:ac0b92f5d1a747d84b21869d0568a166e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the button is long pressed.  <br /></td></tr>
 <tr class="separator:ac0b92f5d1a747d84b21869d0568a166e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f6cbfe908b98e59be80247ea32ed7f3" id="r_a3f6cbfe908b98e59be80247ea32ed7f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a3f6cbfe908b98e59be80247ea32ed7f3">stillPressed</a> (bool execute)</td></tr>
+<tr class="memdesc:a3f6cbfe908b98e59be80247ea32ed7f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a Button is still pressed.  <br /></td></tr>
+<tr class="separator:a3f6cbfe908b98e59be80247ea32ed7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add213814e966a392e3c1f7631133230b" id="r_add213814e966a392e3c1f7631133230b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#add213814e966a392e3c1f7631133230b">anyPressed</a> (bool execute)</td></tr>
+<tr class="memdesc:add213814e966a392e3c1f7631133230b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a button is newly pressed or still pressed.  <br /></td></tr>
+<tr class="separator:add213814e966a392e3c1f7631133230b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d87257a617f157dbbe214b9519b2f0e" id="r_a7d87257a617f157dbbe214b9519b2f0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a7d87257a617f157dbbe214b9519b2f0e">updateButton</a> ()</td></tr>
 <tr class="memdesc:a7d87257a617f157dbbe214b9519b2f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Has to be called regularly! Update the current status of the button. This method reads the current status of the button and stores in history.  <br /></td></tr>
 <tr class="separator:a7d87257a617f157dbbe214b9519b2f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -102,11 +108,14 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><div class="groupText"><p>Setter Methods for objects of the <a class="el" href="class_button_debounce.html" title="Button Class using software debounce.">ButtonDebounce</a> class.</p>
 <p>All Setter Methods available. The functions always returns a true value. Pin cannot be changed after initialization. If a long press behavior is wanted, one can set the duration (Standard is 1000ms) and the function, which shall be executed automatically. </p>
 </div></td></tr>
-<tr class="memitem:a0e305464389251f970fe18c83b6438bf" id="r_a0e305464389251f970fe18c83b6438bf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a0e305464389251f970fe18c83b6438bf">setPullUp</a> (bool pullUp)</td></tr>
+<tr class="memitem:a0e305464389251f970fe18c83b6438bf" id="r_a0e305464389251f970fe18c83b6438bf"><td class="memItemLeft" align="right" valign="top"><a id="a0e305464389251f970fe18c83b6438bf" name="a0e305464389251f970fe18c83b6438bf"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setPullUp</b> (bool pullUp)</td></tr>
 <tr class="separator:a0e305464389251f970fe18c83b6438bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38831172f15fc08989d1ee56fc1f6a0b" id="r_a38831172f15fc08989d1ee56fc1f6a0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a38831172f15fc08989d1ee56fc1f6a0b">setExecuteAtRelease</a> (bool executeAtRelease)</td></tr>
+<tr class="memitem:a38831172f15fc08989d1ee56fc1f6a0b" id="r_a38831172f15fc08989d1ee56fc1f6a0b"><td class="memItemLeft" align="right" valign="top"><a id="a38831172f15fc08989d1ee56fc1f6a0b" name="a38831172f15fc08989d1ee56fc1f6a0b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setExecuteAtRelease</b> (bool executeAtRelease)</td></tr>
 <tr class="separator:a38831172f15fc08989d1ee56fc1f6a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86f70ff0978676127798feb3fdbb3fb8" id="r_a86f70ff0978676127798feb3fdbb3fb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a86f70ff0978676127798feb3fdbb3fb8">setFunction</a> (void(*bFunction)())</td></tr>
+<tr class="memitem:a86f70ff0978676127798feb3fdbb3fb8" id="r_a86f70ff0978676127798feb3fdbb3fb8"><td class="memItemLeft" align="right" valign="top"><a id="a86f70ff0978676127798feb3fdbb3fb8" name="a86f70ff0978676127798feb3fdbb3fb8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFunction</b> (void(*bFunction)())</td></tr>
 <tr class="separator:a86f70ff0978676127798feb3fdbb3fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a659647ff248f9aa83de838077d19b129" id="r_a659647ff248f9aa83de838077d19b129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_button_debounce.html#a659647ff248f9aa83de838077d19b129">setLongPressDuration</a> (unsigned long duration)</td></tr>
 <tr class="separator:a659647ff248f9aa83de838077d19b129"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +178,35 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="add213814e966a392e3c1f7631133230b" name="add213814e966a392e3c1f7631133230b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add213814e966a392e3c1f7631133230b">&#9670;&#160;</a></span>anyPressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ButtonDebounce::anyPressed </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>execute</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a button is newly pressed or still pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">execute</td><td>If the corresponding function should be executed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the button is pressed </dd>
+<dd>
+false if the button is not pressed </dd></dl>
+
+</div>
+</div>
 <a id="acc17eb5d0d9ad2d584dfb78462b28697" name="acc17eb5d0d9ad2d584dfb78462b28697"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc17eb5d0d9ad2d584dfb78462b28697">&#9670;&#160;</a></span>getButtonHistory()</h2>
 
@@ -243,42 +281,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a38831172f15fc08989d1ee56fc1f6a0b" name="a38831172f15fc08989d1ee56fc1f6a0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38831172f15fc08989d1ee56fc1f6a0b">&#9670;&#160;</a></span>setExecuteAtRelease()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ButtonDebounce::setExecuteAtRelease </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>executeAtRelease</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a86f70ff0978676127798feb3fdbb3fb8" name="a86f70ff0978676127798feb3fdbb3fb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86f70ff0978676127798feb3fdbb3fb8">&#9670;&#160;</a></span>setFunction()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool ButtonDebounce::setFunction </td>
-          <td>(</td>
-          <td class="paramtype">void(*)()&#160;</td>
-          <td class="paramname"><em>bFunction</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a659647ff248f9aa83de838077d19b129" name="a659647ff248f9aa83de838077d19b129"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a659647ff248f9aa83de838077d19b129">&#9670;&#160;</a></span>setLongPressDuration()</h2>
 
@@ -317,21 +319,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0e305464389251f970fe18c83b6438bf" name="a0e305464389251f970fe18c83b6438bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e305464389251f970fe18c83b6438bf">&#9670;&#160;</a></span>setPullUp()</h2>
+<a id="a3f6cbfe908b98e59be80247ea32ed7f3" name="a3f6cbfe908b98e59be80247ea32ed7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f6cbfe908b98e59be80247ea32ed7f3">&#9670;&#160;</a></span>stillPressed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ButtonDebounce::setPullUp </td>
+          <td class="memname">bool ButtonDebounce::stillPressed </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>pullUp</em></td><td>)</td>
+          <td class="paramname"><em>execute</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if a Button is still pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">execute</td><td>If the corresponding function should be executed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the button is pressed </dd>
+<dd>
+false if the button is not pressed </dd></dl>
 
 </div>
 </div>
@@ -355,8 +368,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/<a class="el" href="_button_debounce_8h.html">ButtonDebounce.h</a></li>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/<a class="el" href="_button_debounce_8h_source.html">ButtonDebounce.h</a></li>
+<li>C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/<b>ButtonDebounce.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -2,7 +2,7 @@
  * @file ButtonDebounce.h
  * @author Timo Raab
  * @brief Register Button Presses with Software Debounce
- * @version 1.0
+ * @version 1.1
  * @date 2023-12-23
  * 
  * @copyright Copyright (c) 2023
@@ -92,7 +92,7 @@ class ButtonDebounce {
          * @param execute If the corresponding function should be executed
          * @return if the button is pressed
          */
-            bool isPressed(bool execute = false);
+        bool isPressed(bool execute = false);
 
 
         /**
@@ -100,7 +100,7 @@ class ButtonDebounce {
          * @param execute If the corresponding function should be executed
          * @return if the button is long pressed
          */
-            bool isLongPressed(bool execute = false);
+        bool isLongPressed(bool execute = false);
 
         /**
          * @brief Checks if a Button is still pressed
