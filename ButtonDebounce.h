@@ -2,7 +2,7 @@
  * @file ButtonDebounce.h
  * @author Timo Raab
  * @brief Register Button Presses with Software Debounce
- * @version 1.2
+ * @version 1.3
  * @date 2023-12-23
  * 
  * @copyright Copyright (c) 2023
@@ -27,9 +27,6 @@
  * @brief Button Class using software debounce
  * 
  */
-#define PULLUP 1 //true
-#define PULLDOWN 0 //false, for consistency between the constructors
-
 #define EXECUTENUMBERALL 3
 #define EXECUTENUMBERISPRESSED 2
 #define EXECUTENUMBERSTILLPRESSED 1
@@ -139,7 +136,7 @@ class ButtonDebounce {
          * @return true if the button is pressed
          * @return false if the button is not pressed 
          */
-        bool anyPressed(bool execute = false);
+        bool anyPressed(bool execute);
 
         /**
          * @brief Checks if a button is newly pressed or still pressed
