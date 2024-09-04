@@ -31,6 +31,26 @@ ButtonDebounce::ButtonDebounce(unsigned char pin,
             pinMode(_pin, INPUT);
         }
 }
+
+ButtonDebounce::ButtonDebounce(unsigned char pin, 
+    uint8_t inputmode, 
+    bool logicmode, 
+    bool executeAtRelease,
+    void (*bFunction)()) {
+                _pin = pin;
+
+        _pullUp = logicmode;
+        _bFunc = bFunction;
+        _executeAtRelease = executeAtRelease;
+        _buttonHistory = HISTORYINIT;
+
+        _pressTimeTemp = 0;
+        _isPressedTemp = false;
+        _longPressDuration = 1000;
+        _bFuncLong = nullptr;
+
+        pinMode(_pin, inputmode);
+}
 //_____________________________________________________________________________
 
 

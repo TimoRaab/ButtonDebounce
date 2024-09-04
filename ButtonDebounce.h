@@ -27,6 +27,9 @@
  * @brief Button Class using software debounce
  * 
  */
+#define PULLUP 1 //true
+#define PULLDOWN 0 //false, for consistency between the constructors
+
 #define EXECUTENUMBERALL 3
 #define EXECUTENUMBERISPRESSED 2
 #define EXECUTENUMBERSTILLPRESSED 1
@@ -72,6 +75,20 @@ class ButtonDebounce {
          * Constructor for ButtonDebounce object. A pin is required, all other arguemnts are optional. Additionally the longPressDuration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods.
          */
         ButtonDebounce(unsigned char pin, bool pullUp = true, bool executeAtRelease = false, void (*bFunction)() = nullptr) ;
+
+        /**
+         * @brief Construct a new Button Debounce object
+         * 
+         * @param pin Physical pin at microcontroller
+         * @param inputmode chooses if the input mode (INPUT vs INPUT_PULLUP)
+         * @param logicmode chooses if a button is low (PULLUP) or high (PULLDOWN) when pressed
+         * @param executeAtRelease True: Function is executed at button release.
+         *                          False: Function is executed at button press.
+         * @param bFunction Pointer to function which shall be executed at button press
+         * 
+         * Constructor for ButtonDebounce object. A pin is required, all other arguemnts are optional. Additionally the longPressDuration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods.
+         */
+        ButtonDebounce(unsigned char pin, uint8_t inputmode, bool logicmode, bool executeAtRelease = false, void (*bFunction)() = nullptr);
 
         /**
          * @name Setter Methods
