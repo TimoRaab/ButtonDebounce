@@ -1,6 +1,5 @@
 \doxysection{Button\+Debounce.\+h}
-\hypertarget{_button_debounce_8h_source}{}\label{_button_debounce_8h_source}\index{C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/ButtonDebounce.h@{C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/ButtonDebounce.h}}
-\mbox{\hyperlink{_button_debounce_8h}{Go to the documentation of this file.}}
+\hypertarget{_button_debounce_8h_source}{}\label{_button_debounce_8h_source}\mbox{\hyperlink{_button_debounce_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ ButtonDebounce\_h}}
@@ -9,58 +8,65 @@
 \DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}Arduino.h"{}}}
 \DoxyCodeLine{00024\ }
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_debounce}{ButtonDebounce}}\ \{}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \_pin;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pin}}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_pullUp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ of\ internal\ pull\ up\ resistor,}}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ not\ pull\ down\ is\ assumend,}}
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ standard:\ true}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Standard\ Operation}}
-\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_executeAtRelease;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Choose,\ when\ the\ button\ press\ should\ be\ registered}}
-\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Standard:\ at\ buttonPress\ (\_executeAtRelease\ =\ false)}}
-\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ void\ (*\_bFunc)();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ function\ call\ at\ button\ press}}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Long\ Press\ Operation,\ only\ available\ with\ setter-\/functions\ \ }}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Long\ Press\ is\ only\ available\ with\ execute\ at\ start}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_longPressDuration;\textcolor{comment}{//\ Duration\ till\ long\ press\ triggers}}
-\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ void\ (*\_bFuncLong)();\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ function\ call\ at\ long\ press\ activation}}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Internal\ handling}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint8\_t\ \_buttonHistory;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ saves\ history\ for\ debounce\ \ \ \ \ }}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isPressedTemp;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ longPress\ needed}}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_pressTimeTemp;\ \ \ \textcolor{comment}{//\ time\ when\ button\ is\ pressed\ for\ longPress}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ EXECUTENUMBERALL\ 3}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ EXECUTENUMBERISPRESSED\ 2}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EXECUTENUMBERSTILLPRESSED\ 1}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ EXECUTENUMBERNONE\ 0}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button_debounce}{ButtonDebounce}}\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \_pin;\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pin}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_pullUp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ of\ internal\ pull\ up\ resistor,}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ not\ pull\ down\ is\ assumend,}}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ standard:\ true}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Standard\ Operation}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_executeAtRelease;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Choose,\ when\ the\ button\ press\ should\ be\ registered}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Standard:\ at\ buttonPress\ (\_executeAtRelease\ =\ false)}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ void\ (*\_bFunc)();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ function\ call\ at\ button\ press}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Long\ Press\ Operation,\ only\ available\ with\ setter-\/functions\ \ }}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Long\ Press\ is\ only\ available\ with\ execute\ at\ start}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_longPressDuration;\textcolor{comment}{//\ Duration\ till\ long\ press\ triggers}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ void\ (*\_bFuncLong)();\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ function\ call\ at\ long\ press\ activation}}
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ uint8\_t\ readButton();\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ current\ button\ status}}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_button_debounce}{ButtonDebounce}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pin,\ \textcolor{keywordtype}{bool}\ pullUp\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ executeAtRelease\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{void}\ (*bFunction)()\ =\ \textcolor{keyword}{nullptr})\ ;}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setPullUp(\textcolor{keywordtype}{bool}\ pullUp);}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setExecuteAtRelease(\textcolor{keywordtype}{bool}\ executeAtRelease);}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setFunction(\textcolor{keywordtype}{void}\ (*bFunction)());}
-\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a659647ff248f9aa83de838077d19b129}{setLongPressDuration}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ duration);}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}{setLongPressFunction}}(\textcolor{keywordtype}{void}\ (*bFunction)());}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a8fdf0914162d518923de06107c2d7434}{isPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}{isLongPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a3f6cbfe908b98e59be80247ea32ed7f3}{stillPressed}}(\textcolor{keywordtype}{bool}\ execute);}
-\DoxyCodeLine{00113\ }
-\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_add213814e966a392e3c1f7631133230b}{anyPressed}}(\textcolor{keywordtype}{bool}\ execute);}
-\DoxyCodeLine{00122\ }
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}{updateButton}}();}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_button_debounce_acc17eb5d0d9ad2d584dfb78462b28697}{getButtonHistory}}();}
-\DoxyCodeLine{00137\ \};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \textcolor{comment}{//EOF}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Internal\ handling}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ uint8\_t\ \_buttonHistory;\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ saves\ history\ for\ debounce\ \ \ \ \ }}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isPressedTemp;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ for\ longPress\ needed}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \_pressTimeTemp;\ \ \ \textcolor{comment}{//\ time\ when\ button\ is\ pressed\ for\ longPress}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ uint8\_t\ readButton();\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ read\ current\ button\ status}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}{ButtonDebounce}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pin,\ \textcolor{keywordtype}{bool}\ pullUp\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ executeAtRelease\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{void}\ (*bFunction)()\ =\ \textcolor{keyword}{nullptr})\ ;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setPullUp(\textcolor{keywordtype}{bool}\ pullUp);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setExecuteAtRelease(\textcolor{keywordtype}{bool}\ executeAtRelease);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ setFunction(\textcolor{keywordtype}{void}\ (*bFunction)());}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a659647ff248f9aa83de838077d19b129}{setLongPressDuration}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ duration);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}{setLongPressFunction}}(\textcolor{keywordtype}{void}\ (*bFunction)());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a8fdf0914162d518923de06107c2d7434}{isPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}{isLongPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a9ef46ed1b5322187d542d851a0882bcc}{stillPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}{anyPressed}}(\textcolor{keywordtype}{bool}\ execute\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}{anyPressed}}(uint8\_t\ executeNumber\ =\ EXECUTENUMBERNONE);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}{updateButton}}();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{class_button_debounce_acc17eb5d0d9ad2d584dfb78462b28697}{getButtonHistory}}();}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{comment}{//EOF}}
 
 \end{DoxyCode}

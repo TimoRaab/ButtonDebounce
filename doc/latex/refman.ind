@@ -8,23 +8,19 @@
   \item {ButtonDebounce}, \hyperpage{1}, \hyperpage{7}
     \subitem {anyPressed}, \hyperpage{8}
     \subitem {ButtonDebounce}, \hyperpage{8}
-    \subitem {getButtonHistory}, \hyperpage{8}
+    \subitem {getButtonHistory}, \hyperpage{9}
     \subitem {isLongPressed}, \hyperpage{9}
     \subitem {isPressed}, \hyperpage{9}
-    \subitem {setLongPressDuration}, \hyperpage{9}
-    \subitem {setLongPressFunction}, \hyperpage{9}
-    \subitem {stillPressed}, \hyperpage{9}
+    \subitem {setLongPressDuration}, \hyperpage{10}
+    \subitem {setLongPressFunction}, \hyperpage{10}
+    \subitem {stillPressed}, \hyperpage{10}
     \subitem {updateButton}, \hyperpage{10}
-
-  \indexspace
-
-  \item {C:/Users/Timo/Documents/Arduino/libraries/ButtonDebounce/ButtonDebounce.h}, 
-		\hyperpage{11, 12}
+  \item {ButtonDebounce.h}, \hyperpage{11}
 
   \indexspace
 
   \item {getButtonHistory}
-    \subitem {ButtonDebounce}, \hyperpage{8}
+    \subitem {ButtonDebounce}, \hyperpage{9}
 
   \indexspace
 
@@ -36,11 +32,11 @@
   \indexspace
 
   \item {setLongPressDuration}
-    \subitem {ButtonDebounce}, \hyperpage{9}
+    \subitem {ButtonDebounce}, \hyperpage{10}
   \item {setLongPressFunction}
-    \subitem {ButtonDebounce}, \hyperpage{9}
+    \subitem {ButtonDebounce}, \hyperpage{10}
   \item {stillPressed}
-    \subitem {ButtonDebounce}, \hyperpage{9}
+    \subitem {ButtonDebounce}, \hyperpage{10}
 
   \indexspace
 

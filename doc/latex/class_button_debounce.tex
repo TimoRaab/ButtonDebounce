@@ -1,14 +1,5 @@
 \doxysection{Button\+Debounce Class Reference}
 \hypertarget{class_button_debounce}{}\label{class_button_debounce}\index{ButtonDebounce@{ButtonDebounce}}
-
-
-Button Class using software debounce.  
-
-
-
-
-{\ttfamily \#include $<$Button\+Debounce.\+h$>$}
-
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,9 +9,11 @@ bool \mbox{\hyperlink{class_button_debounce_a8fdf0914162d518923de06107c2d7434}{i
 \begin{DoxyCompactList}\small\item\em Checks if the button is short pressed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}{is\+Long\+Pressed}} (bool execute=false)
 \begin{DoxyCompactList}\small\item\em Checks if the button is long pressed. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_button_debounce_a3f6cbfe908b98e59be80247ea32ed7f3}{still\+Pressed}} (bool execute)
+bool \mbox{\hyperlink{class_button_debounce_a9ef46ed1b5322187d542d851a0882bcc}{still\+Pressed}} (bool execute=false)
 \begin{DoxyCompactList}\small\item\em Checks if a Button is still pressed. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_button_debounce_add213814e966a392e3c1f7631133230b}{any\+Pressed}} (bool execute)
+bool \mbox{\hyperlink{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}{any\+Pressed}} (bool execute=false)
+\begin{DoxyCompactList}\small\item\em Checks if a button is newly pressed or still pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_debounce_a7038a77d198747158191db2c2f3d3ce0}{any\+Pressed}} (uint8\+\_\+t execute\+Number=EXECUTENUMBERNONE)
 \begin{DoxyCompactList}\small\item\em Checks if a button is newly pressed or still pressed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}{update\+Button}} ()
 \begin{DoxyCompactList}\small\item\em Has to be called regularly! Update the current status of the button. This method reads the current status of the button and stores in history. \end{DoxyCompactList}\item 
@@ -47,9 +40,6 @@ bool \mbox{\hyperlink{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}{s
 \end{Indent}
 
 
-\doxysubsection{Detailed Description}
-Button Class using software debounce. 
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}\label{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6} 
 \index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
@@ -75,10 +65,10 @@ Construct a new Button Debounce object.
 Constructor for \doxylink{class_button_debounce}{Button\+Debounce} object. A pin is required, all other arguemnts are optional. Additionally the long\+Press\+Duration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_button_debounce_add213814e966a392e3c1f7631133230b}\label{class_button_debounce_add213814e966a392e3c1f7631133230b} 
+\Hypertarget{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}\label{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff} 
 \index{ButtonDebounce@{ButtonDebounce}!anyPressed@{anyPressed}}
 \index{anyPressed@{anyPressed}!ButtonDebounce@{ButtonDebounce}}
-\doxysubsubsection{\texorpdfstring{anyPressed()}{anyPressed()}}
+\doxysubsubsection{\texorpdfstring{anyPressed()}{anyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool Button\+Debounce\+::any\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{execute = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
@@ -88,6 +78,26 @@ Checks if a button is newly pressed or still pressed.
 
 \begin{DoxyParams}{Parameters}
 {\em execute} & If the corresponding function should be executed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the button is pressed 
+
+false if the button is not pressed 
+\end{DoxyReturn}
+\Hypertarget{class_button_debounce_a7038a77d198747158191db2c2f3d3ce0}\label{class_button_debounce_a7038a77d198747158191db2c2f3d3ce0} 
+\index{ButtonDebounce@{ButtonDebounce}!anyPressed@{anyPressed}}
+\index{anyPressed@{anyPressed}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{anyPressed()}{anyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Button\+Debounce\+::any\+Pressed (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{execute\+Number = {\ttfamily EXECUTENUMBERNONE} }\end{DoxyParamCaption})}
+
+
+
+Checks if a button is newly pressed or still pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em execute\+Number} & If and when the corresponding function should be executed \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -156,7 +166,7 @@ Set the duration that a long press is registered \Hypertarget{class_button_debou
 \doxysubsubsection{\texorpdfstring{setLongPressFunction()}{setLongPressFunction()}}
 {\footnotesize\ttfamily bool Button\+Debounce\+::set\+Long\+Press\+Function (\begin{DoxyParamCaption}\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function }\end{DoxyParamCaption})}
 
-Set the function which can be automatically called when a long press is registered. \Hypertarget{class_button_debounce_a3f6cbfe908b98e59be80247ea32ed7f3}\label{class_button_debounce_a3f6cbfe908b98e59be80247ea32ed7f3} 
+Set the function which can be automatically called when a long press is registered. \Hypertarget{class_button_debounce_a9ef46ed1b5322187d542d851a0882bcc}\label{class_button_debounce_a9ef46ed1b5322187d542d851a0882bcc} 
 \index{ButtonDebounce@{ButtonDebounce}!stillPressed@{stillPressed}}
 \index{stillPressed@{stillPressed}!ButtonDebounce@{ButtonDebounce}}
 \doxysubsubsection{\texorpdfstring{stillPressed()}{stillPressed()}}
@@ -190,5 +200,5 @@ This has to be called regularly to register button presses! If not called regula
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Timo/\+Documents/\+Arduino/libraries/\+Button\+Debounce/\mbox{\hyperlink{_button_debounce_8h}{Button\+Debounce.\+h}}\item 
-C\+:/\+Users/\+Timo/\+Documents/\+Arduino/libraries/\+Button\+Debounce/Button\+Debounce.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{_button_debounce_8h}{Button\+Debounce.\+h}}\item 
+Button\+Debounce.\+cpp\end{DoxyCompactItemize}

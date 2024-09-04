@@ -2,7 +2,7 @@
  * @file ButtonDebounce.h
  * @author Timo Raab
  * @brief Register Button Presses with Software Debounce
- * @version 1.1
+ * @version 1.2
  * @date 2023-12-23
  * 
  * @copyright Copyright (c) 2023
