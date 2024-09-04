@@ -27,6 +27,11 @@
  * @brief Button Class using software debounce
  * 
  */
+#define EXECUTENUMBERALL 3
+#define EXECUTENUMBERISPRESSED 2
+#define EXECUTENUMBERSTILLPRESSED 1
+#define EXECUTENUMBERNONE 0
+
 class ButtonDebounce {
 
     private:
@@ -77,7 +82,6 @@ class ButtonDebounce {
          * If a long press behavior is wanted, one can set the duration (Standard is 1000ms)
          * and the function, which shall be executed automatically.
          */
-		
 		bool setPullUp(bool pullUp);
         bool setExecuteAtRelease(bool executeAtRelease);
         bool setFunction(void (*bFunction)());
@@ -119,6 +123,15 @@ class ButtonDebounce {
          * @return false if the button is not pressed 
          */
         bool anyPressed(bool execute = false);
+
+        /**
+         * @brief Checks if a button is newly pressed or still pressed
+         * 
+         * @param executeNumber If and when the corresponding function should be executed
+         * @return true if the button is pressed
+         * @return false if the button is not pressed 
+         */
+        bool anyPressed(uint8_t executeNumber = EXECUTENUMBERNONE);
 
         /**
          * @brief Has to be called regularly! Update the current status of the button.

@@ -4,6 +4,8 @@
 #define COMPARATOR  0b00000111
 #define HISTORYINIT 0b11111111
 
+
+
 //_____________________________________________________________________________
 //_CONSTRUCTOR_________________________________________________________________
 //_____________________________________________________________________________
@@ -142,6 +144,12 @@ bool ButtonDebounce::stillPressed(bool execute) {
 bool ButtonDebounce::anyPressed(bool execute) {
     boolean temp = isPressed(execute);
     temp = temp || stillPressed(execute);
+    return temp;
+}
+
+bool ButtonDebounce::anyPressed(uint8_t executeNumber = EXECUTENUMBERALL) {
+    boolean temp = isPressed((executeNumber & 0b00000010) != 0);
+    temp = temp || stillPressed((executeNumber & 0b00000001) != 0);
     return temp;
 }
 //_____________________________________________________________________________
