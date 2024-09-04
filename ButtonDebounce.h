@@ -132,20 +132,20 @@ class ButtonDebounce {
         /**
          * @brief Checks if a button is newly pressed or still pressed
          * 
-         * @param execute If the corresponding function should be executed
-         * @return true if the button is pressed
-         * @return false if the button is not pressed 
-         */
-        bool anyPressed(bool execute);
-
-        /**
-         * @brief Checks if a button is newly pressed or still pressed
-         * 
          * @param executeNumber If and when the corresponding function should be executed
          * @return true if the button is pressed
          * @return false if the button is not pressed 
          */
         bool anyPressed(uint8_t executeNumber = EXECUTENUMBERNONE);
+
+        /**
+         * @brief Checks if a button is newly pressed or still pressed
+         * 
+         * @param execute If the corresponding function should be executed
+         * @return true if the button is pressed
+         * @return false if the button is not pressed 
+         */
+        bool anyPressed(bool execute);
 
         /**
          * @brief Has to be called regularly! Update the current status of the button.
