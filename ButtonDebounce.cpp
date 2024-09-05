@@ -167,7 +167,7 @@ bool ButtonDebounce::anyPressed(bool execute) {
     return temp;
 }
 
-bool ButtonDebounce::anyPressed(uint8_t executeNumber = EXECUTENUMBERALL) {
+bool ButtonDebounce::anyPressed(uint8_t executeNumber) {
     boolean temp = isPressed((executeNumber & 0b00000010) != 0);
     temp = temp || stillPressed((executeNumber & 0b00000001) != 0);
     return temp;
