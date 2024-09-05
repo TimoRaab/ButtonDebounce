@@ -1,21 +1,21 @@
 \begin{theindex}
 
   \item {anyPressed}
-    \subitem {ButtonDebounce}, \hyperpage{8}
+    \subitem {ButtonDebounce}, \hyperpage{8, 9}
 
   \indexspace
 
   \item {ButtonDebounce}, \hyperpage{1}, \hyperpage{7}
-    \subitem {anyPressed}, \hyperpage{8}
+    \subitem {anyPressed}, \hyperpage{8, 9}
     \subitem {ButtonDebounce}, \hyperpage{8}
     \subitem {getButtonHistory}, \hyperpage{9}
     \subitem {isLongPressed}, \hyperpage{9}
-    \subitem {isPressed}, \hyperpage{9}
+    \subitem {isPressed}, \hyperpage{10}
     \subitem {setLongPressDuration}, \hyperpage{10}
     \subitem {setLongPressFunction}, \hyperpage{10}
     \subitem {stillPressed}, \hyperpage{10}
-    \subitem {updateButton}, \hyperpage{10}
-  \item {ButtonDebounce.h}, \hyperpage{11}
+    \subitem {updateButton}, \hyperpage{11}
+  \item {ButtonDebounce.h}, \hyperpage{13}
 
   \indexspace
 
@@ -27,7 +27,7 @@
   \item {isLongPressed}
     \subitem {ButtonDebounce}, \hyperpage{9}
   \item {isPressed}
-    \subitem {ButtonDebounce}, \hyperpage{9}
+    \subitem {ButtonDebounce}, \hyperpage{10}
 
   \indexspace
 
@@ -41,6 +41,6 @@
   \indexspace
 
   \item {updateButton}
-    \subitem {ButtonDebounce}, \hyperpage{10}
+    \subitem {ButtonDebounce}, \hyperpage{11}
 
 \end{theindex}

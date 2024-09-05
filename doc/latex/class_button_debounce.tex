@@ -5,15 +5,17 @@
 \item 
 \mbox{\hyperlink{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}{Button\+Debounce}} (unsigned char pin, bool pull\+Up=true, bool execute\+At\+Release=false, void(\texorpdfstring{$\ast$}{*}b\+Function)()=nullptr)
 \begin{DoxyCompactList}\small\item\em Construct a new Button Debounce object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button_debounce_a6f3328f8ee8b553a9a20b40371f35541}{Button\+Debounce}} (unsigned char pin, uint8\+\_\+t inputmode, bool logicmode, bool execute\+At\+Release=false, void(\texorpdfstring{$\ast$}{*}b\+Function)()=nullptr)
+\begin{DoxyCompactList}\small\item\em Construct a new Button Debounce object. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_button_debounce_a8fdf0914162d518923de06107c2d7434}{is\+Pressed}} (bool execute=false)
 \begin{DoxyCompactList}\small\item\em Checks if the button is short pressed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_button_debounce_ac0b92f5d1a747d84b21869d0568a166e}{is\+Long\+Pressed}} (bool execute=false)
 \begin{DoxyCompactList}\small\item\em Checks if the button is long pressed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_button_debounce_a9ef46ed1b5322187d542d851a0882bcc}{still\+Pressed}} (bool execute=false)
 \begin{DoxyCompactList}\small\item\em Checks if a Button is still pressed. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}{any\+Pressed}} (bool execute=false)
-\begin{DoxyCompactList}\small\item\em Checks if a button is newly pressed or still pressed. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_button_debounce_a7038a77d198747158191db2c2f3d3ce0}{any\+Pressed}} (uint8\+\_\+t execute\+Number=EXECUTENUMBERNONE)
+\begin{DoxyCompactList}\small\item\em Checks if a button is newly pressed or still pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_button_debounce_add213814e966a392e3c1f7631133230b}{any\+Pressed}} (bool execute)
 \begin{DoxyCompactList}\small\item\em Checks if a button is newly pressed or still pressed. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_button_debounce_a7d87257a617f157dbbe214b9519b2f0e}{update\+Button}} ()
 \begin{DoxyCompactList}\small\item\em Has to be called regularly! Update the current status of the button. This method reads the current status of the button and stores in history. \end{DoxyCompactList}\item 
@@ -44,7 +46,7 @@ bool \mbox{\hyperlink{class_button_debounce_a4b9edc4e8d6d61f0857eed9b93a84d9c}{s
 \Hypertarget{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6}\label{class_button_debounce_a9efc1c8d2e46583acf7c08f1dea1daa6} 
 \index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
 \index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
-\doxysubsubsection{\texorpdfstring{ButtonDebounce()}{ButtonDebounce()}}
+\doxysubsubsection{\texorpdfstring{ButtonDebounce()}{ButtonDebounce()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Button\+Debounce\+::\+Button\+Debounce (\begin{DoxyParamCaption}\item[{unsigned char}]{pin,  }\item[{bool}]{pull\+Up = {\ttfamily true},  }\item[{bool}]{execute\+At\+Release = {\ttfamily false},  }\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function = {\ttfamily nullptr} }\end{DoxyParamCaption})}
 
 
@@ -62,14 +64,37 @@ Construct a new Button Debounce object.
 {\em b\+Function} & Pointer to function which shall be executed at button press\\
 \hline
 \end{DoxyParams}
+Constructor for \doxylink{class_button_debounce}{Button\+Debounce} object. A pin is required, all other arguemnts are optional. Additionally the long\+Press\+Duration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods. \Hypertarget{class_button_debounce_a6f3328f8ee8b553a9a20b40371f35541}\label{class_button_debounce_a6f3328f8ee8b553a9a20b40371f35541} 
+\index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
+\index{ButtonDebounce@{ButtonDebounce}!ButtonDebounce@{ButtonDebounce}}
+\doxysubsubsection{\texorpdfstring{ButtonDebounce()}{ButtonDebounce()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Button\+Debounce\+::\+Button\+Debounce (\begin{DoxyParamCaption}\item[{unsigned char}]{pin,  }\item[{uint8\+\_\+t}]{inputmode,  }\item[{bool}]{logicmode,  }\item[{bool}]{execute\+At\+Release = {\ttfamily false},  }\item[{void(\texorpdfstring{$\ast$}{*})()}]{b\+Function = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Construct a new Button Debounce object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & Physical pin at microcontroller \\
+\hline
+{\em inputmode} & chooses if the input mode (INPUT vs INPUT\+\_\+\+PULLUP) \\
+\hline
+{\em logicmode} & chooses if a button is low (PULLUP) or high (PULLDOWN) when pressed \\
+\hline
+{\em execute\+At\+Release} & True\+: Function is executed at button release. False\+: Function is executed at button press. \\
+\hline
+{\em b\+Function} & Pointer to function which shall be executed at button press\\
+\hline
+\end{DoxyParams}
 Constructor for \doxylink{class_button_debounce}{Button\+Debounce} object. A pin is required, all other arguemnts are optional. Additionally the long\+Press\+Duration is set to 1000ms, no longpress function is registered. This has to be done via the corresponding setter methods. 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff}\label{class_button_debounce_a37c6abb74b96e404f59ef4d3f012d1ff} 
+\Hypertarget{class_button_debounce_add213814e966a392e3c1f7631133230b}\label{class_button_debounce_add213814e966a392e3c1f7631133230b} 
 \index{ButtonDebounce@{ButtonDebounce}!anyPressed@{anyPressed}}
 \index{anyPressed@{anyPressed}!ButtonDebounce@{ButtonDebounce}}
 \doxysubsubsection{\texorpdfstring{anyPressed()}{anyPressed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily bool Button\+Debounce\+::any\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{execute = {\ttfamily false} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Button\+Debounce\+::any\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{execute }\end{DoxyParamCaption})}
 
 
 

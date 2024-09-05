@@ -22,11 +22,6 @@
 
 #include "Arduino.h"
 
-
-/**
- * @brief Button Class using software debounce
- * 
- */
 #define EXECUTENUMBERALL 3
 #define EXECUTENUMBERISPRESSED 2
 #define EXECUTENUMBERSTILLPRESSED 1
